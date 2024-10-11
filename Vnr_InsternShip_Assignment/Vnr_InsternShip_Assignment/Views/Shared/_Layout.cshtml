@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Vnr_InsternShip_Assignment</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Vnr_InsternShip_Assignment.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .col-2
+        {
+            box-shadow: 6px 5px 10px #ccc inset;
+            height: 100%;
+        }
+        .col-10 {
+            height:100%;   
+        }
+
+        .box_shadow {
+            box-shadow: -6px 6px 10px #ccc inset;
+        }
+
+    </style>
+    <div class="container m-3">
+        <div class="col">
+            <div class="row">
+                @* Display content *@
+                <div class="col-10 ">
+                    <div class="box_shadow border border-1 border-bottom-0 border-start-0 me-1 p-2" style="height: 500px">
+                        <header>
+                            <h3>Khóa học: @ViewData["TitleKhoaHoc"] </h3>
+                            <div class="mx-auto" style="width: 98%; height: 3px; background-color: #dcfe85"></div>
+                        </header>
+                       
+                        <div class="container">
+                            <main role="main" class="pb-3">
+                                @RenderBody()
+                            </main>
+                        </div>
+                    </div>
+                </div>
+                @* Partial Sidebar *@
+                <div class="col-2 border border-1 border-bottom-0">
+                        <partial name="_PartialSidebar" />
+                </div>
+            </div>
+            <div class="row">
+                <footer class="w-100" style="background-color: #06af90; height: 5px">
+                </footer>
+            </div>  
+        </div>
+    </div>
+      
+   
+
+    
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
